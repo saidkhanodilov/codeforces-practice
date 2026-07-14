@@ -4,13 +4,22 @@ public class Iloveusername155A {
     public static void main(String args[]) {
         // Take input
         Scanner scanner = new Scanner(System.in);
+        if (!scanner.hasNextInt()) {
+            scanner.close();
+            return;
+        }
+
         int n = scanner.nextInt();
-        // Process
-        int minValue = 0;
-        int maxValue = 0;
+
+        int firstScore = scanner.nextInt();
+        int minValue = firstScore;
+        int maxValue = firstScore;
         int count = 0;
-        for (int i = 0; i < n; i++) {
-            int input =  scanner.nextInt();
+
+        // Loop through the remaining n - 1 contests
+        for (int i = 1; i < n; i++) {
+            int input = scanner.nextInt();
+
             if (input > maxValue) {
                 maxValue = input;
                 count++;
@@ -19,8 +28,8 @@ public class Iloveusername155A {
                 minValue = input;
                 count++;
             }
-
         }
+
         // Output
         System.out.println(count);
         scanner.close();
