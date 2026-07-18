@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Queueattheschool266B {
+public class Queueattheschool266A {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

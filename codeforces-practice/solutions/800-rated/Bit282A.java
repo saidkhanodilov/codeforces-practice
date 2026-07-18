@@ -1,4 +1,5 @@
-import java.util.Scanner;public class Bit282A {
+import java.util.Scanner;
+public class Bit282A {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numberOfLines =  scanner.nextInt();
