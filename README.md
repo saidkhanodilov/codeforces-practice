@@ -1,2 +1,1 @@
-# codeforces-practice
-All my solutions to codeforce problemset.
+800 Rated Solutions: Foundational problems focusing on implementation and logic.
