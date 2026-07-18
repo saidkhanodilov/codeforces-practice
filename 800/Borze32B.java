@@ -15,8 +15,8 @@ public class Borze32B {
                 }
                 else{
                     result.append('2');
-                    i++;
                 }
+                i++;
             }
         }
         System.out.println(result.toString());
