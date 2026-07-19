@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Serejaanddima381A {
     public static void main(String[] args) {
         // Take input
         Scanner scanner = new Scanner(System.in);

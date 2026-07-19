@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Marathon1692A {
   public static void main(String[] args) {
     // Take input
     Scanner scanner = new Scanner(System.in);
