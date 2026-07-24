@@ -12,10 +12,9 @@ public class Requiredremainder1374A {
             long y = scanner.nextLong();
             long n = scanner.nextLong();
 
-            long k = n;
-            while (k % x != y) {
-                k--;
-            }
+            long target = n - y;
+            long groups = target / x;
+            long k = (groups * x) + y;
 
             System.out.println(k);
         }
