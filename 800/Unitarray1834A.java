@@ -7,7 +7,6 @@ public class Unitarray1834A {
         if (!scanner.hasNextInt()) {
             return;
         }
-
         int t = scanner.nextInt();
 
         for (int i = 0; i < t; i++) {
