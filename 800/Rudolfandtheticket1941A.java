@@ -7,7 +7,6 @@ public class Rudolfandtheticket1941A {
         if (!scanner.hasNextInt()) {
             return;
         }
-
         int t = scanner.nextInt();
 
         for (int i = 0; i < t; i++) {
