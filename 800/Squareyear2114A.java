@@ -1,37 +1,23 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class Squareyear2114A {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        if (!scanner.hasNextInt()) {
-            return;
-        }
-
-        int t = scanner.nextInt();
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(br.readLine().trim());
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < t; i++) {
-            String s = scanner.next();
-            int target = Integer.parseInt(s);
-
-            boolean found = false;
-
-            for (int len = 1; len <= 3; len++) {
-                int a = Integer.parseInt(s.substring(0, len));
-                int b = Integer.parseInt(s.substring(len));
-
-                if ((a + b) * (a + b) == target) {
-                    System.out.println(a + " " + b);
-                    found = true;
+            int n = Integer.parseInt(br.readLine().trim());
+            int found = -1;
+            for (int k = 0; k * k <= n; k++) {
+                if (k * k == n) {
+                    found = k;
                     break;
                 }
             }
-
-            if (!found) {
-                System.out.println(-1);
-            }
+            sb.append(found == -1 ? "-1" : "0 " + found).append('\n');
         }
-
-        scanner.close();
+        System.out.print(sb);
     }
 }
