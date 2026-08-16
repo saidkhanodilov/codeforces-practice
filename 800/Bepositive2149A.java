@@ -8,39 +8,43 @@ public class Bepositive2149A {
             return;
         }
 
-        int n = scanner.nextInt();
-        int negatives = 0;
-        int zeros = 0;
+        int t = scanner.nextInt();
 
-        for (int i = 0; i < n; i++) {
-            int x = scanner.nextInt();
-            if (x < 0) {
-                negatives++;
-            } else if (x == 0) {
-                zeros++;
+        for (int tc = 0; tc < t; tc++) {
+            int n = scanner.nextInt();
+            int negatives = 0;
+            int zeros = 0;
+
+            for (int i = 0; i < n; i++) {
+                int x = scanner.nextInt();
+                if (x < 0) {
+                    negatives++;
+                } else if (x == 0) {
+                    zeros++;
+                }
             }
-        }
 
-        int required = (n + 1) / 2;
-        int ops = 0;
+            int required = (n + 1) / 2;
+            int ops = 0;
 
-        if (negatives > required) {
-            ops += (negatives - required);
-            negatives = required;
-        }
-
-        if (negatives % 2 != 0) {
-            if (zeros > 0) {
-                ops += 1;
-                zeros--;
-            } else {
-                ops += 2;
+            if (negatives > required) {
+                ops += (negatives - required);
+                negatives = required;
             }
+
+            if (negatives % 2 != 0) {
+                if (zeros > 0) {
+                    ops += 1;
+                    zeros--;
+                } else {
+                    ops += 2;
+                }
+            }
+
+            ops += zeros;
+
+            System.out.println(ops);
         }
-
-        ops += zeros;
-
-        System.out.println(ops);
 
         scanner.close();
     }
