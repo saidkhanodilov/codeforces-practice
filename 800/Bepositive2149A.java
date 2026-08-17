@@ -1,51 +1,23 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Bepositive2149A {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        if (!scanner.hasNextInt()) {
-            return;
-        }
-
-        int t = scanner.nextInt();
-
-        for (int tc = 0; tc < t; tc++) {
-            int n = scanner.nextInt();
-            int negatives = 0;
-            int zeros = 0;
-
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(br.readLine().trim());
+        StringBuilder sb = new StringBuilder();
+        while (t-- > 0) {
+            int n = Integer.parseInt(br.readLine().trim());
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int zeros = 0, negs = 0;
             for (int i = 0; i < n; i++) {
-                int x = scanner.nextInt();
-                if (x < 0) {
-                    negatives++;
-                } else if (x == 0) {
-                    zeros++;
-                }
+                int x = Integer.parseInt(st.nextToken());
+                if (x == 0) zeros++;
+                else if (x == -1) negs++;
             }
-
-            int required = (n + 1) / 2;
-            int ops = 0;
-
-            if (negatives > required) {
-                ops += (negatives - required);
-                negatives = required;
-            }
-
-            if (negatives % 2 != 0) {
-                if (zeros > 0) {
-                    ops += 1;
-                    zeros--;
-                } else {
-                    ops += 2;
-                }
-            }
-
-            ops += zeros;
-
-            System.out.println(ops);
+            int ans = zeros + (negs % 2 == 1 ? 2 : 0);
+            sb.append(ans).append('\n');
         }
-
-        scanner.close();
+        System.out.print(sb);
     }
 }
