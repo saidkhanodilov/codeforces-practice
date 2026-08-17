@@ -1,25 +1,21 @@
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class Blackboardgame2123A {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        Blackboardgame2123A(args);
+    }
 
-        if (!scanner.hasNextInt()) {
-            return;
+    public static void Blackboardgame2123A(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(br.readLine().trim());
+        StringBuilder sb = new StringBuilder();
+
+        while (t-- > 0) {
+            int n = Integer.parseInt(br.readLine().trim());
+            sb.append(n % 4 == 0 ? "Bob" : "Alice").append('\n');
         }
 
-        int t = scanner.nextInt();
-
-        for (int i = 0; i < t; i++) {
-            int n = scanner.nextInt();
-
-            if (n % 4 == 0 || n % 4 == 3) {
-                System.out.println("Bob");
-            } else {
-                System.out.println("Alice");
-            }
-        }
-
-        scanner.close();
+        System.out.print(sb);
     }
 }
