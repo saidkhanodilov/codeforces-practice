@@ -13,7 +13,8 @@ public class Maximize1968A {
                     break;
                 }
             }
-            sb.append(x - spf).append("\n");
+            int y = (spf == x) ? x - 1 : x - spf;
+            sb.append(y).append("\n");
         }
         System.out.print(sb);
         scanner.close();
