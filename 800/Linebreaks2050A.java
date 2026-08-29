@@ -9,11 +9,14 @@ public class Linebreaks2050A {
             int m = scanner.nextInt();
             int total = 0;
             int x = 0;
+            boolean stopped = false;
             for (int i = 0; i < n; i++) {
                 String w = scanner.next();
-                if (total + w.length() <= m) {
+                if (!stopped && total + w.length() <= m) {
                     total += w.length();
                     x++;
+                } else {
+                    stopped = true;
                 }
             }
             sb.append(x).append("\n");
